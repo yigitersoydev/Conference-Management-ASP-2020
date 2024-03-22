@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 public partial class ConferencesAsAdmin : System.Web.UI.Page
 {
-    SqlConnection conn = new SqlConnection("Data Source=YIGIT\\SQLEXPRESS;Initial Catalog=CMS;Integrated Security=True;");
+    SqlConnection conn = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=CMS;Integrated Security=True;");
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -28,10 +28,19 @@ public partial class ConferencesAsAdmin : System.Web.UI.Page
         if (Session["USERSession"] != null)
         {
             //string usernamee = Session["USERSession"].ToString();
-            SqlCommand veriOkuma = new SqlCommand();            conn.Open();            veriOkuma.Connection = conn;
+            SqlCommand veriOkuma = new SqlCommand();
+            conn.Open();
+            veriOkuma.Connection = conn;
 
             veriOkuma.CommandText = ("SELECT [conferenceSubject],[date],[dueDate],[topic] FROM [dbo].[Conference] WHERE [userIDofAdmin]='" + Session["USERSession"] + "'  "); //from olcak hangi tablodan ekiceÛini gšsterecek
-            SqlDataReader reader;            reader = veriOkuma.ExecuteReader();            rptr_ConferenceAsAdmin.DataSource = reader;            rptr_ConferenceAsAdmin.DataBind();            reader.Close();            conn.Close();
+            SqlDataReader reader;
+            reader = veriOkuma.ExecuteReader();
+
+            rptr_ConferenceAsAdmin.DataSource = reader;
+            rptr_ConferenceAsAdmin.DataBind();
+            reader.Close();
+
+            conn.Close();
         }
 
 
