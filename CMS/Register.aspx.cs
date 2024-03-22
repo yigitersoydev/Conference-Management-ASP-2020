@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 public partial class Register : System.Web.UI.Page
 {
-    SqlConnection conn = new SqlConnection("Data Source=YIGIT\\SQLEXPRESS;Initial Catalog=CMS;Integrated Security=True;");
+    SqlConnection conn = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=CMS;Integrated Security=True;");
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["USERSession"] == null)
