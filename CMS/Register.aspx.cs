@@ -53,7 +53,7 @@ public partial class Register : System.Web.UI.Page
 
             MailMessage message = new MailMessage();
             SmtpClient smtp = new SmtpClient();
-            message.From = new MailAddress("conferencemanagecms@gmail.com", "Conference Management");    //maili gšnderen gmail
+            message.From = new MailAddress("SENDER_MAIL", "Conference Management");    //maili gšnderen gmail
             message.To.Add(new MailAddress(TextBox4.Text));       //mailin gšnderileceÛi 
             message.Subject = "Activation Code";
             string yol = "https://" + Request.Url.Authority + "/linkedPage.aspx?kod=" + code2;
@@ -63,7 +63,7 @@ public partial class Register : System.Web.UI.Page
             smtp.Host = "smtp.gmail.com"; //for gmail host  
             smtp.EnableSsl = true;
             smtp.UseDefaultCredentials = false;
-            smtp.Credentials = new NetworkCredential("conferencemanagecms@gmail.com", "ourSysTeam0017");
+            smtp.Credentials = new NetworkCredential("SENDER_MAIL", "SENDER_PASSWORD");
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
             smtp.Send(message);
             Label1.Text = "Kayıt Başarılı bir şekilde sonlandı.";
