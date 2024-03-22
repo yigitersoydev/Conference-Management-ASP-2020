@@ -12,7 +12,7 @@ using System.Configuration;
 
 public partial class announcements : System.Web.UI.Page
 {
-    SqlConnection conn = new SqlConnection("Data Source=YIGIT\\SQLEXPRESS;Initial Catalog=CMS;Integrated Security=True;");
+    SqlConnection conn = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=CMS;Integrated Security=True;");
 
     protected void Page_Load(object sender, EventArgs e)
     {
