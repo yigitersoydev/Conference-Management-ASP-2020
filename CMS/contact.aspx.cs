@@ -35,16 +35,16 @@ public partial class contact : System.Web.UI.Page
 
         MailMessage message = new MailMessage();
         SmtpClient smtp = new SmtpClient();
-        message.From = new MailAddress("conferencemanagecms@gmail.com");    //maili gšnderen gmail
-        message.To.Add(new MailAddress("yigit_ersoy@hotmail.com.tr"));       //mailin gšnderileceÛi 
+        message.From = new MailAddress("SENDER_EMAIL");    
+        message.To.Add(new MailAddress("YOUR_EMAIL"));       
         message.Subject = "FeedBack Mail From User";
-        message.IsBodyHtml = true; //to make message body as html  
+        message.IsBodyHtml = true;  
         message.Body = "This message was sent to you by the " + namme + " and e mail address is " + emaill + " . The message is: " + messagess + ".";
         smtp.Port = 587;
-        smtp.Host = "smtp.gmail.com"; //for gmail host  
+        smtp.Host = "smtp.gmail.com"; 
         smtp.EnableSsl = true;
         smtp.UseDefaultCredentials = false;
-        smtp.Credentials = new NetworkCredential("conferencemanagecms@gmail.com", "ourSysTeam0017");
+        smtp.Credentials = new NetworkCredential("SENDER_EMAIL", "SENDER_PASSWORD");
         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
         smtp.Send(message);
         MessageBox.Show("Sent!");
