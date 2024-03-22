@@ -42,7 +42,7 @@ public partial class createConference : System.Web.UI.Page
 
         int idi = 5;
 
-        SqlConnection baglanti = new SqlConnection("Data Source=YIGIT\\SQLEXPRESS;Initial Catalog=CMS;Integrated Security=True;MultipleActiveResultSets=True;App=EntityFramework");
+        SqlConnection baglanti = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=CMS;Integrated Security=True;MultipleActiveResultSets=True;App=EntityFramework");
         SqlCommand komut = new SqlCommand();
 
 
