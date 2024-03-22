@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 public partial class linkedPage : System.Web.UI.Page
 {
-    SqlConnection conn = new SqlConnection("Data Source=YIGIT\\SQLEXPRESS;Initial Catalog=CMS;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+    SqlConnection conn = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=CMS;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
     protected void Page_Load(object sender, EventArgs e)
     {
         conn.Open();
