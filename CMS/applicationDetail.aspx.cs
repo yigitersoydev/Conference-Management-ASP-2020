@@ -14,7 +14,7 @@ using CheckBox = System.Web.UI.WebControls.CheckBox;
 
 public partial class applicationDetail : System.Web.UI.Page
 {
-    SqlConnection conn = new SqlConnection("Data Source=YIGIT\\SQLEXPRESS;Initial Catalog=CMS;Integrated Security=True;MultipleActiveResultSets=true");
+    SqlConnection conn = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=CMS;Integrated Security=True;MultipleActiveResultSets=true");
 
     protected void Page_Load(object sender, EventArgs e)
     {
