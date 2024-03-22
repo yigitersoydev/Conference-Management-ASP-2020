@@ -70,7 +70,7 @@ public partial class applicationDetail : System.Web.UI.Page
             {
                 MailMessage message = new MailMessage();
                 SmtpClient smtp = new SmtpClient();
-                message.From = new MailAddress("conferencemanagecms@gmail.com");    //maili gšnderen gmail
+                message.From = new MailAddress("SENDER_MAIL");    //maili gšnderen gmail
                 message.To.Add(new MailAddress(dr["email"].ToString()));       //mailin gšnderileceÛi 
                 message.Subject = "FeedBack Mail From User";
                 message.IsBodyHtml = true; //to make message body as html  
@@ -79,7 +79,7 @@ public partial class applicationDetail : System.Web.UI.Page
                 smtp.Host = "smtp.gmail.com"; //for gmail host  
                 smtp.EnableSsl = true;
                 smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new NetworkCredential("conferencemanagecms@gmail.com", "ourSysTeam0017");
+                smtp.Credentials = new NetworkCredential("SENDER_MAIL", "SENDER_PASSWORD");
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.Send(message);
                 MessageBox.Show("Information mail has been sent.!");
